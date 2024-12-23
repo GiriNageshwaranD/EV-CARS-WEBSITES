@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV CARS</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .car-symbol {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Electric Vehicle Comparison</h1>
+
+    <!-- Search Bar -->
+    <div>
+        <label for="search">Search EV Company:</label>
+        <input type="text" id="search" placeholder="Enter company name...">
+        <button onclick="search()">Search</button>
+    </div>
+
+    <!-- City Location and Car Symbol Rows -->
+    <table>
+        <tr>
+            <th>Company</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Range</th>
+            <th>City Location</th>
+        </tr>
+        <tr>
+            <td>Tata</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Palo Alto</td>
+        </tr>
+        <tr>
+            <td>Mahindra</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Yokohama</td>
+        </tr>
+        <tr>
+            <td>Hyundai</td>
+            <td>i3</td>
+            <td></td>
+            <td></td>
+            <td>Munich</td>
+        </tr>
+        <tr>
+            <td>BMW</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Los Angeles</td>
+        </tr>
+    </table>
+
+    <script>
+        function search() {
+            var searchInput = document.getElementById('search').value.toLowerCase();
+            var table = document.querySelector('table');
+            var rows = table.getElementsByTagName('tr');
+
+            for (var i = 1; i < rows.length; i++) {
+                var companyName = rows[i].getElementsByTagName('td')[0].innerText.toLowerCase();
+                if (companyName.includes(searchInput)) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

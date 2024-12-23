@@ -1,0 +1,100 @@
+
+<html>
+<head>
+    <title>EV CARS</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .car-symbol {
+            width: 300px; 
+            height: 300px;
+            object-fit: contain;
+        }
+        /* Add your additional styling here */
+    </style>
+</head>
+<body>
+
+    <h1><center>Electric Vehicle Comparison</center></h1><hr>
+
+    <!-- Search Bar -->
+    <div>
+        <label for="search"><b> EV Companies:</b></label>
+        <input type="text" id="search" placeholder="Enter company name...">
+        <button onclick="search()">search</button>
+        <label for="search">City:</label>
+        <input type="text" id="search" placeholder="Enter city...">
+        <button onclick="search()">search</button>
+    </div>
+    <!-- City Location and Car Symbol Rows -->
+    <table>
+        <tr>
+            <th>Model</th>
+            <!-- Add more columns for additional features -->
+        </tr>
+        <tr>
+		<td>
+                <!-- Car Symbols for the Third Row -->
+                <a href="https://mahindraelectricautomobile.com/"><img src="C:\Users\girin\OneDrive\Desktop\FSDPROJECT\MAHINDRAEV.png"  alt="" class="car-symbol"></a>
+                <a href="https://ev.tatamotors.com/"><img src="C:\Users\girin\OneDrive\Desktop\FSDPROJECT\tataev.png" alt="" class="car-symbol"></a>
+               <a href="https://www.mg.co.uk/new-cars/mg-zs-ev" ><img src="C:\Users\girin\OneDrive\Desktop\FSDPROJECT\logo-MG.png"  alt="" class="car-symbol"></a>
+		</td>
+        </tr>
+        <tr>
+                <!-- Car Symbols for the Fourth Row -->
+         <td>    
+		     <a href="https://www.kia.com/in/our-vehicles/ev6/showroom.html"><img src="C:\Users\girin\OneDrive\Desktop\FSDPROJECT\download (1).png" alt="" class="car-symbol"></a>
+             <a href="https://www.hyundai.com/in/en/find-a-car/kona-electric/highlights"><img src="C:\Users\girin\OneDrive\Desktop\FSDPROJECT\download (2).png" alt="" class="car-symbol"></a>
+             <a href="https://bydautoindia.com/"><img src="C:\Users\girin\OneDrive\Desktop\FSDPROJECT\byd-company-ltd-logo-887E9DA32D-seeklogo.com.png" alt="" class="car-symbol"></a>
+	    </td>  
+        </tr>
+        <tr>
+            <a href="carcomparision.html"><th colspan="3">UPCOMING LAUNCHES</th></a>
+			<a href="carcomparison.html">Upcoming Launches</a>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <!-- Add more columns for additional features -->
+            <td></td> <!-- Example city location -->
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <!-- Add more columns for additional features -->
+            <td>Munich</td> <!-- Example city location -->
+        </tr>
+        <!-- Add more rows for additional EVs -->
+		
+<a href="carcomparison.html">Comparsion</a>
+    <script>
+        function search() {
+            // Add your search logic here
+            var searchInput = document.getElementById('search').value.toLowerCase();
+            var table = document.querySelector('table');
+            var rows = table.getElementsByTagName('tr');
+
+            for (var i = 1; i < rows.length; i++) {
+                var companyName = rows[i].getElementsByTagName('td')[0].innerText.toLowerCase();
+                if (companyName.includes(searchInput)) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
